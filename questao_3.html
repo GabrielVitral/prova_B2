@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cálculo de Fatorial</title>
+    <script>
+        function calcularFatorial(numero) {
+            var resultado = 1;
+            for (var i = 1; i <= numero; i++) {
+                resultado *= i;
+            }
+            return resultado;
+        }
+
+        function calcularFatoriaisDeUmADez() {
+            var resultados = "";
+            for (var i = 1; i <= 10; i++) {
+                var fatorial = calcularFatorial(i);
+                resultados += "Fatorial de " + i + ": " + fatorial + "<br>";
+            }
+            document.getElementById("resultados").innerHTML = resultados;
+        }
+    </script>
+</head>
+<body>
+    <h1>Cálculo de Fatorial</h1>
+    <button onclick="calcularFatoriaisDeUmADez()">Calcular Fatoriais</button>
+    <div id="resultados"></div>
+</body>
+</html>

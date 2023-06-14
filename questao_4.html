@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Verificar Quadrado Perfeito</title>
+  <script>
+    function verificarQuadradoPerfeito(num) {
+      var raiz = Math.sqrt(num);
+      return Number.isInteger(raiz);
+    }
+
+    function verificarEExibir() {
+      var entrada = parseInt(document.getElementById("entrada").value);
+      var resultado = verificarQuadradoPerfeito(entrada);
+
+      if (resultado) {
+        document.getElementById("saida").textContent = "O número é um quadrado perfeito.";
+      } else {
+        document.getElementById("saida").textContent = "O número não é um quadrado perfeito.";
+      }
+    }
+  </script>
+</head>
+<body>
+  <h1>Verificar Quadrado Perfeito</h1>
+  <input type="text" id="entrada" placeholder="Digite um número">
+  <button onclick="verificarEExibir()">Verificar</button>
+  <p id="saida"></p>
+</body>
+</html>

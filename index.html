@@ -1,14 +1,44 @@
 <!DOCTYPE html>
 <html>
-  
 <head>
-    <title>Verificar se um número é primo</title>
-   <script type="text/javascript" src="index.js"></script>
- </head>
- <body>
-   Número para teste: <input id="num" type="number" /> <br />
-   <button onclick="primo()">Testar</button><br />
-   Resultado: <div id="resposta">
+  <title>Verificar se um número é primo</title>
+  <script>
+    function verificarPrimo(numero) {
+      if (numero <= 1) {
+        return false;
+      }
 
+      for (var i = 2; i <= Math.sqrt(numero); i++) {
+        if (numero % i === 0) {
+          return false;
+        }
+      }
+
+      return true;
+    }
+
+    function listarPrimos() {
+      var resultado = document.getElementById("resultado");
+      resultado.innerHTML = "";
+
+      for (var i = 1; i <= 1000; i++) {
+        if (verificarPrimo(i)) {
+          resultado.innerHTML += i + " ";
+        }
+      }
+    }
+  </script>
+</head>
+<body>
+  <h1>Verificar se um número é primo</h1>
+  <p>
+    Digite um número inteiro:
+    <input type="number" id="numero" />
+    <button onclick="verificarPrimo(parseInt(document.getElementById('numero').value))">Verificar</button>
+  </p>
+  <h2>Números primos entre 1 e 1000:</h2>
+  <p id="resultado"></p>
+  <button onclick="listarPrimos()">Listar</button>
 </body>
 </html>
+
